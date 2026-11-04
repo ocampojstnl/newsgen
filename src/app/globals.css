@@ -1,0 +1,320 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-geist-sans);
+  --color-up: var(--up);
+  --color-down: var(--down);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-xs: var(--radius);
+  --radius-sm: var(--radius);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --radius-xl: var(--radius);
+  --radius-2xl: var(--radius);
+  --radius-3xl: var(--radius);
+  --radius-4xl: var(--radius);
+}
+
+:root {
+  --background: oklch(0.985 0.002 270);
+  --foreground: oklch(0.17 0.01 270);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.17 0.01 270);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.17 0.01 270);
+  --primary: oklch(0.55 0.2 275);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.96 0.005 270);
+  --secondary-foreground: oklch(0.25 0.01 270);
+  --muted: oklch(0.96 0.005 270);
+  --muted-foreground: oklch(0.52 0.015 270);
+  --accent: oklch(0.95 0.015 275);
+  --accent-foreground: oklch(0.25 0.03 275);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.91 0.006 270);
+  --input: oklch(0.91 0.006 270);
+  --ring: oklch(0.55 0.2 275 / 60%);
+  --up: oklch(0.62 0.17 155);
+  --down: oklch(0.6 0.21 25);
+  --chart-1: oklch(0.55 0.2 275);
+  --chart-2: oklch(0.62 0.17 155);
+  --chart-3: oklch(0.6 0.21 25);
+  --chart-4: oklch(0.75 0.15 75);
+  --chart-5: oklch(0.65 0.15 230);
+  --radius: 7px;
+  --sidebar: oklch(0.975 0.003 270);
+  --sidebar-foreground: oklch(0.17 0.01 270);
+  --sidebar-primary: oklch(0.55 0.2 275);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.94 0.01 275);
+  --sidebar-accent-foreground: oklch(0.2 0.02 275);
+  --sidebar-border: oklch(0.91 0.006 270);
+  --sidebar-ring: oklch(0.55 0.2 275 / 60%);
+  --glow: oklch(0.7 0.18 275 / 12%);
+}
+
+.dark {
+  --background: oklch(0.13 0.008 275);
+  --foreground: oklch(0.96 0.005 270);
+  --card: oklch(0.17 0.01 275);
+  --card-foreground: oklch(0.96 0.005 270);
+  --popover: oklch(0.18 0.012 275);
+  --popover-foreground: oklch(0.96 0.005 270);
+  --primary: oklch(0.7 0.16 275);
+  --primary-foreground: oklch(0.15 0.02 275);
+  --secondary: oklch(0.22 0.012 275);
+  --secondary-foreground: oklch(0.96 0.005 270);
+  --muted: oklch(0.22 0.012 275);
+  --muted-foreground: oklch(0.68 0.015 270);
+  --accent: oklch(0.25 0.03 275);
+  --accent-foreground: oklch(0.96 0.005 270);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.7 0.16 275 / 50%);
+  --up: oklch(0.74 0.17 155);
+  --down: oklch(0.68 0.2 22);
+  --chart-1: oklch(0.7 0.16 275);
+  --chart-2: oklch(0.74 0.17 155);
+  --chart-3: oklch(0.68 0.2 22);
+  --chart-4: oklch(0.8 0.14 75);
+  --chart-5: oklch(0.72 0.13 230);
+  --sidebar: oklch(0.15 0.009 275);
+  --sidebar-foreground: oklch(0.96 0.005 270);
+  --sidebar-primary: oklch(0.7 0.16 275);
+  --sidebar-primary-foreground: oklch(0.15 0.02 275);
+  --sidebar-accent: oklch(0.22 0.02 275);
+  --sidebar-accent-foreground: oklch(0.96 0.005 270);
+  --sidebar-border: oklch(1 0 0 / 7%);
+  --sidebar-ring: oklch(0.7 0.16 275 / 50%);
+  --glow: oklch(0.6 0.2 275 / 18%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+  ::selection {
+    background: color-mix(in oklch, var(--primary) 30%, transparent);
+  }
+}
+
+@layer utilities {
+  .bg-glow {
+    background-image:
+      radial-gradient(60rem 30rem at 15% -10%, var(--glow), transparent 60%),
+      radial-gradient(40rem 25rem at 100% 0%, color-mix(in oklch, var(--up) 7%, transparent), transparent 60%);
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, color-mix(in oklch, var(--foreground) 4%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklch, var(--foreground) 4%, transparent) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(ellipse at top, black 30%, transparent 75%);
+  }
+  .text-gradient {
+    background: linear-gradient(120deg, var(--foreground) 30%, var(--primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  .thin-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in oklch, var(--foreground) 15%, transparent) transparent;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progress-slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(350%);
+  }
+}
+
+@keyframes tape {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.rise-in {
+  animation: rise-in 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.progress-bar {
+  animation: progress-slide 1.4s ease-in-out infinite;
+}
+
+.tape {
+  animation: tape 90s linear infinite;
+}
+
+.tape:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+/* Touch devices zoom in on fields under 16px, so keep them at 16px there. */
+@media (hover: none) and (pointer: coarse) {
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea {
+    font-size: max(16px, 1em);
+  }
+}
+
+/*
+ * Clear view, for blurry or low vision. Toggled by the "clear-view" class on <html>.
+ * Larger text, stronger contrast, solid panels instead of see-through blurred ones, and no motion.
+ */
+html.clear-view {
+  font-size: 118.75%;
+  --foreground: oklch(0.08 0 0);
+  --card-foreground: oklch(0.08 0 0);
+  --muted-foreground: oklch(0.32 0.01 270);
+  --border: oklch(0.62 0.01 270);
+  --input: oklch(0.55 0.01 270);
+  --primary: oklch(0.45 0.22 275);
+  --ring: oklch(0.45 0.22 275);
+}
+
+html.dark.clear-view {
+  --background: oklch(0.1 0 0);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.17 0.005 275);
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.17 0.005 275);
+  --muted: oklch(0.25 0.01 275);
+  --muted-foreground: oklch(0.88 0.01 270);
+  --border: oklch(1 0 0 / 38%);
+  --input: oklch(1 0 0 / 45%);
+  --primary: oklch(0.8 0.13 275);
+  --primary-foreground: oklch(0.12 0.02 275);
+  --sidebar: oklch(0.13 0.005 275);
+  --sidebar-border: oklch(1 0 0 / 30%);
+  --sidebar-accent: oklch(0.3 0.04 275);
+  --ring: oklch(0.85 0.13 275);
+}
+
+html.clear-view body {
+  font-weight: 460;
+  letter-spacing: 0.012em;
+  -webkit-font-smoothing: auto;
+}
+
+/* Sizes set in pixels do not follow the larger base size, so they are raised here. */
+html.clear-view .text-\[10px\] { font-size: 0.8125rem; }
+html.clear-view .text-\[11px\] { font-size: 0.875rem; }
+html.clear-view .text-\[13px\] { font-size: 0.9375rem; }
+html.clear-view .text-\[15px\] { font-size: 1rem; }
+html.clear-view .text-xs { font-size: 0.875rem; line-height: 1.4; }
+
+html.clear-view p,
+html.clear-view li { line-height: 1.75; }
+html.clear-view article p { line-height: 1.95; }
+
+/* See-through, blurred panels make text look softer, so everything is solid. */
+html.clear-view [class*="backdrop-blur"] { backdrop-filter: none; -webkit-backdrop-filter: none; }
+html.clear-view [class*="bg-card/"] { background-color: var(--card); }
+html.clear-view [class*="bg-background/"] { background-color: var(--background); }
+html.clear-view [class*="bg-sidebar/"] { background-color: var(--sidebar); }
+html.clear-view [class*="bg-popover/"] { background-color: var(--popover); }
+html.clear-view .bg-grid { display: none; }
+html.clear-view .bg-glow { background-image: none; }
+html.clear-view .text-gradient { background: none; color: var(--foreground); -webkit-text-fill-color: currentColor; }
+
+/* Faded text is hard to read, so it is shown at full strength. */
+html.clear-view [class*="text-muted-foreground/"],
+html.clear-view [class*="text-foreground/"] { color: var(--muted-foreground); }
+html.clear-view [class*="opacity-40"],
+html.clear-view [class*="opacity-60"],
+html.clear-view [class*="opacity-70"] { opacity: 1; }
+
+/* A thick, bright outline shows where the keyboard is. */
+html.clear-view :focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
+
+/* Links inside text are underlined so they do not rely on colour alone. */
+html.clear-view article a,
+html.clear-view main p a { text-decoration: underline; text-underline-offset: 3px; }
+
+html.clear-view *,
+html.clear-view *::before,
+html.clear-view *::after {
+  animation-duration: 1ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 1ms !important;
+}
+
+/* Loading indicators keep moving, slowly, so a busy screen never looks frozen. */
+html.clear-view .animate-spin { animation-duration: 1.6s !important; animation-iteration-count: infinite !important; }
+html.clear-view .progress-bar { animation-duration: 2.4s !important; animation-iteration-count: infinite !important; }

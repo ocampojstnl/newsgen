@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "NewsGen Article Grabber",
+  "version": "1.0.0",
+  "description": "When you click a story in NewsGen, opens that one article in this browser and brings its text back to NewsGen.",
+  "permissions": ["scripting", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost/*", "http://127.0.0.1/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
