@@ -97,7 +97,8 @@ export function EvidencePanel({
       {sentence.evidence.map((item) => {
         const source = sources.find((s) => s.label === item.source);
         const fullParagraph =
-          source && "paragraphs" in source ? source.paragraphs[item.paragraph - 1] : null;
+          // Public article-only links send paragraphs as null, so check for real text.
+          source && "paragraphs" in source && Array.isArray(source.paragraphs) ? (source.paragraphs[item.paragraph - 1] ?? null) : null;
         return (
           <div key={`${item.source}-${item.paragraph}-${item.quote}`} className="border-t pt-3 text-sm">
             <p className="font-medium">{source?.outlet_name ?? item.source}</p>
