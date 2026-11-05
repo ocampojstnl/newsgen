@@ -22,6 +22,10 @@ Open http://localhost:3000 and sign in with your username and password. See `.en
 
 To deploy, set the same variables on the host. Keep `.env.local` out of git. It is already ignored.
 
+## Bugs and feature requests
+
+Everyone signed in can report a bug or request a feature from **Bugs & requests** in the sidebar (`/feedback`). Each report becomes a numbered task (NG-1, NG-2, ...) on a board with the columns New, Accepted, In progress, Done and Not doable. Others can add a "Me too" vote and comment. Admins act as the developers: they set the status and priority and leave a note for the reporter, and a reason is required for "Not doable". Every status change is recorded in the task's activity. Reporters can edit or delete their own task until a developer starts on it.
+
 ## How a version is made
 
 1. **Capture.** The article text is saved with a timestamp and SHA-256 fingerprint. Saved sources cannot be changed.

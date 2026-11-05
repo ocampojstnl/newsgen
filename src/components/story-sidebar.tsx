@@ -2,6 +2,7 @@
 
 import { AnimatePresence, LayoutGroup, motion } from "motion/react";
 import {
+  Bug,
   CheckCircle2,
   ChevronsUpDown,
   Clock,
@@ -215,12 +216,14 @@ function AccountMenu({ collapsed }: { collapsed: boolean }) {
 export function StorySidebar({
   stories,
   requestCount,
+  feedbackCount,
   collapsed = false,
   onToggleCollapsed,
   onDelete,
 }: {
   stories: StoryListItem[];
   requestCount: number;
+  feedbackCount: number;
   collapsed?: boolean;
   onToggleCollapsed?: () => void;
   onDelete: (story: StoryListItem) => void;
@@ -242,6 +245,7 @@ export function StorySidebar({
   ];
   const tools: NavItem[] = [
     { href: "/import", label: "Grab blocked articles", icon: DownloadCloud },
+    { href: "/feedback", label: "Bugs & requests", icon: Bug, count: feedbackCount },
     ...(user.role === "admin" ? [{ href: "/admin/users", label: "Users", icon: Users }] : []),
   ];
 

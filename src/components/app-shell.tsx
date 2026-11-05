@@ -65,6 +65,7 @@ function pageTitle(pathname: string): string {
   if (pathname === "/pending") return "Pending";
   if (pathname === "/shared") return "Shared with me";
   if (pathname === "/requests") return "Requests";
+  if (pathname.startsWith("/feedback")) return "Bugs & requests";
   if (pathname === "/admin/users") return "Users";
   if (pathname === "/approved") return "Approved";
   if (pathname === "/import") return "Grab blocked articles";
@@ -134,11 +135,13 @@ export function AppShell({
   user,
   stories,
   requestCount,
+  feedbackCount,
   initialCollapsed,
 }: {
   children: React.ReactNode;
   user: SessionUser;
   requestCount: number;
+  feedbackCount: number;
   stories: StoryListItem[];
   initialCollapsed: boolean;
 }) {
@@ -219,7 +222,7 @@ export function AppShell({
             collapsed ? "w-16" : "w-72",
           )}
         >
-          <StorySidebar stories={visibleStories} requestCount={requestCount} collapsed={collapsed} onToggleCollapsed={toggleCollapsed} onDelete={deleteStory} />
+          <StorySidebar stories={visibleStories} requestCount={requestCount} feedbackCount={feedbackCount} collapsed={collapsed} onToggleCollapsed={toggleCollapsed} onDelete={deleteStory} />
         </aside>
 
         <AnimatePresence>
@@ -248,7 +251,7 @@ export function AppShell({
                 >
                   <X />
                 </Button>
-                <StorySidebar stories={visibleStories} requestCount={requestCount} onDelete={deleteStory} />
+                <StorySidebar stories={visibleStories} requestCount={requestCount} feedbackCount={feedbackCount} onDelete={deleteStory} />
               </motion.aside>
             </>
           )}
